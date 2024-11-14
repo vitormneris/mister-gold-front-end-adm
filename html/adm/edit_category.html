@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="/node_modules/mdb-ui-kit/css/mdb.min.css" />
+    <link rel="stylesheet" href="/css/adm/edt_category.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Editar Categoria</title>
+</head>
+
+<body>
+    <div class="app-container">
+        <header id="navbar">
+            <!-- Navbar -->
+
+        </header>
+        <!-- sidebar -->
+        <aside class="sidebar" id="sidebar">
+        </aside>
+        <section class="intro">
+            <div class="h1_container">
+                <h1 class="title_NC">Editar categoria</h1>
+            </div>
+
+            <div class="centralize">
+                <div class="category_box">
+
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="text" id="name" class="form-control form-control-lg" />
+                        <label class="form-label" for="name">Digite o nome da categoria</label>
+                    </div>
+
+                    <div class="mb-4 d-flex justify-content-center">
+                        <label for="image">
+                            <img id="selectedImage" src="/images/inserir_img.png" alt="example placeholder"
+                                style="width: 300px;" />
+                        </label>
+                        <input id="image" type="file" style="display: none;"/>
+                    </div>
+
+                    <div class="centralize_btn">
+                        <div id="buttonUpdate" class="d-flex btn_box">
+                            <div data-mdb-ripple-init class="btn btn-primary btn-rounded">
+                                <label class="form-label text-white m-1" for="save">Atualizar</label>
+                                <input type="submit" class="form-control d-none" id="save">
+                            </div>
+                        </div>
+
+                        <div id="buttonDelete" class="d-flex btn_box">
+                            <div data-mdb-ripple-init class="btn_delete btn btn-primary btn-rounded">
+                                <label class="form-label text-white m-1" for="delete">Excluir</label>
+                                <input type="submit" class="form-control d-none" id="delete">
+                                <!-- alterar o botão de submit? -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="status"></div>
+                </div>
+            </div>
+    </div>
+    </section>
+
+    </div>
+    <footer>
+        <p>&copy; 2024 Mistergold. Todos os direitos reservados.</p>
+        <div>
+            <a href="#" style="color: #facc15; margin: 0 10px">Termos de Serviço</a>
+            <a href="#" style="color: #facc15; margin: 0 10px">Política de Privacidade</a>
+        </div>
+    </footer>
+
+    <script src="/api/category/findCategory.js"></script>
+    <script type="module" src="/api/category/updateCategory.js"></script>
+    <script type="module" src="/api/category/deleteCategory.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/category_img.js"></script>
+    <script src="/js/change_img.js"></script>
+    <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js"></script>
+</body>
+
+</html>

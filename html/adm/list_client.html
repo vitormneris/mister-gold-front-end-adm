@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="/node_modules/mdb-ui-kit/css/mdb.min.css" />
+    <link rel="stylesheet" href="/css/adm/adm_UserTable.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Tabela de Usuarios</title>
+</head>
+<body>
+  <div class="app-container">
+    <header id="navbar">
+      <!-- Navbar -->
+     
+  </header>
+      <!-- sidebar -->
+      <aside class="sidebar" id="sidebar">
+      </aside>
+    <div class="title_contanier">
+        <h1 class="page_title">Lista de Usuarios</h1>
+        <div class="title_line" aling="center"></div>
+    </div>
+
+    <section class="intro">
+        <div class="gradient-custom-1 h-100">
+          <div class="d-flex align-items-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="table-responsive bg-white">
+                    <table class="table mb-0">
+                      <thead>
+                        <tr>
+                          <th scope="col">NOME</th>
+                          <th scope="col">EMAIL</th>
+                          <th scope="col">TELEFONE</th>
+                          <th scope="col">ENDEREÇO</th>
+
+                        </tr>
+                      </thead>
+                      <tbody id="container">
+                
+                      </tbody>
+                    </table>
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <footer>
+        <p>&copy; 2024 Mistergold. Todos os direitos reservados.</p>
+        <div>
+            <a href="#" style="color: #facc15; margin: 0 10px">Termos de Serviço</a>
+            <a href="#" style="color: #facc15; margin: 0 10px">Política de Privacidade</a>
+        </div>
+    </footer>
+    
+      <script type="module" src="../../api/client/listClient.js"></script>
+      <script src="/js/navigation.js"></script>
+      <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js"></script>
+</body>
+</html>

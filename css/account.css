@@ -1,0 +1,42 @@
+.form-container {
+    background-color: white;
+    width: 80rem;
+    padding: 32px;
+    border-radius: 1rem;
+    margin: 0 auto;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    
+}
+
+.login-container {
+    width: 42rem;
+}
+
+.form-container h2 {
+    margin: 0 auto;
+    color: var(--hlColor1);
+}
+
+.form-outline {
+    --mdb-input-focus-border-color: #f37b0b;
+    --mdb-input-focus-label-color: #f37b0b;
+    font-size: 1.2rem;
+    padding: 6px;
+
+}
+
+.form-control {
+    color: #f37b0b;
+    --mdb-surface-color: #f37b0b;
+    font-size: 1.2rem;
+}
+
+.form-outline .form-control~.form-label {
+    color: #f37b0b;
+}
+
+#buttonLogOff {
+    margin: 20px;
+    width: 200px;
+}

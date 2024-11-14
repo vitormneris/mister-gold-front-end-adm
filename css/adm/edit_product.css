@@ -1,0 +1,10 @@
+.centralize_btn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn_delete{
+    background-color: rgb(207, 10, 10) !important;
+    margin: 0px 25px;
+}

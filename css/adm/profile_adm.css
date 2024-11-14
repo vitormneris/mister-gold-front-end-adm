@@ -1,0 +1,41 @@
+.centralize_btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn_delete {
+    background-color: rgb(207, 10, 10) !important;
+    margin: 0px 25px;
+}
+
+.form-container h2 {
+    margin: 0 auto;
+    color: var(--hlColor1);
+}
+
+.form-outline {
+    --mdb-input-focus-border-color: #f37b0b;
+    --mdb-input-focus-label-color: #f37b0b;
+    font-size: 1.2rem;
+    padding: 6px;
+
+}
+
+.form-control {
+    color: #f37b0b;
+    --mdb-surface-color: #f37b0b;
+    font-size: 1.2rem;
+}
+
+.form-outline .form-control~.form-label {
+    color: #f37b0b;
+}
+
+#buttonLogOff {
+    width: 200px;
+}
+
+.text-uppercase {
+    color: white;
+}

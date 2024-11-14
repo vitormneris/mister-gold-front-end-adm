@@ -1,0 +1,15 @@
+.card{
+    margin-top: 5vw;
+}
+
+/* esse aqui [e o botão registrar */
+.d-flex .btn{
+    color: white;
+    background-color: #292524 !important;
+    --mdb-btn-box-shadow: 0 4px 9px -4px #434343;
+}
+
+/* esse daqui é o hover do botão registrar*/
+.d-flex .btn-success{
+    --mdb-btn-box-shadow-state: 0 8px 9px -4px rgb(243 255 0 / 53%);
+}

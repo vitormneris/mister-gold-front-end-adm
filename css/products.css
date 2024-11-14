@@ -1,0 +1,40 @@
+.boxes-container{
+    display: flex;
+    flex-direction: row;
+    max-width:100rem;
+    margin: 0 auto;
+    margin-left: 15rem;
+    margin-bottom: 10rem;
+    padding: 2rem;
+}
+.boxes-container .side-box{
+    max-width: 100%;
+    background-color: var(--bgColor2);
+    border-radius: 0.5rem;
+    max-height: fit-content;
+    padding: 2rem;
+    margin: 2rem;
+}
+.boxes-container .products-box{
+    padding: 2rem;
+    max-width: 70%;
+}
+.boxes-container .products-box .col {
+    flex: 1 10 33%;
+    margin-bottom: 1rem;
+}
+.divider-containerALT{
+    margin-top: 0 ;
+}
+.divider-textALT{
+    color: var(--bgColor1);
+    margin-left: 0;
+    font-size: 1rem;
+}
+.divider-containerALT hr.hr.hr-blurry{
+    height: 4px;
+}
+.input-group{
+    display: flex;
+    flex-direction: row;
+}
