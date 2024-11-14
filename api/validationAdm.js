@@ -12,7 +12,7 @@ export async function validationAdm(token) {
             return data.id;
         } else {
            
-            window.location.href = "/html/home.html";
+            window.location.href = "/index.html";
         }
     } catch (error) {
         window.location.href = "/index.html";

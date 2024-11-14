@@ -1,8 +1,8 @@
 import { validationAdm } from "../validationAdm.js";
 
 const token = localStorage.getItem("token");
-let currentPage = 0; // Página inicial
-const pageSize = 10; // Número de itens por página
+let currentPage = 0; 
+const pageSize = 10;
 
 validationAdm(token).then(id => {
     fetchData();
@@ -23,7 +23,7 @@ validationAdm(token).then(id => {
         .then(data => {
             if (data && data.content) {
                 showData(data);
-                updatePagination(data.totalPages || 1); // Atualiza paginação com total de páginas
+                updatePagination(data.totalPages || 1); 
             } else {
                 console.log("Nenhum dado encontrado.");
             }
@@ -35,7 +35,7 @@ validationAdm(token).then(id => {
 
     function showData(data) {
         const divContainer = document.getElementById("container");
-        divContainer.innerHTML = ""; // Limpa dados anteriores
+        divContainer.innerHTML = ""; 
 
         data.content.forEach(contents => {
             const cardClients = `

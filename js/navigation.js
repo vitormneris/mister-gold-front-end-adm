@@ -6,26 +6,18 @@ document.addEventListener('DOMContentLoaded', function() {
         <h2 class="adm-pages">Administração</h2>
         <hr class="hr" />
          <ul>
-            <li><a href="/html/adm/list_client.html">Lista de clientes</a></li>
             <li><a href="/html/adm/new_adm.html">Criar administrador</a></li>
             <li><a href="/html/adm/profile_adm.html">Perfil administrador</a></li>
+            <li><a href="/html/messages.html">Mensagens</a></li>
         </ul>
 
-        <h2 class="adm-pages">Produtos</h2>
+        <h2 class="adm-pages">Gerenciar</h2>
         <hr class="hr" />
          <ul>
-            <li><a href="/html/adm/list_product.html">Lista de produtos</a></li>     
-            <li><a href="/html/adm/new_product.html">Criar produto</a></li>
-        </ul>
-
-        <h2 class="adm-pages">Categorias</h2>
-        <hr class="hr" />
-         <ul>
+            <li><a href="/html/adm/list_client.html">Lista de clientes</a></li>
+            <li><a href="/html/adm/list_product.html">Lista de produtos</a></li>
             <li><a href="/html/adm/list_category.html">Lista de categorias</a></li>
-            <li><a href="/html/adm/new_category.html">Criar categoria</a></li>
         </ul>
-   
-     
     </div>
                   `;
                   containerSidebar.insertAdjacentHTML('beforeend', sidebarContent);

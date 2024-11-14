@@ -14,23 +14,16 @@
 <body>
   <div class="app-container">
     <header id="navbar">
-      <!-- Navbar -->
-
     </header>
-    <!-- sidebar -->
     <aside class="sidebar" id="sidebar">
     </aside>
     <main>
-
-      <!--  -->
       <div class="form-container login-container">
         <h2>Login</h2>
 
         <hr class="hr" />
         <form>
-          <!-- 2 column grid layout with text inputs for the first and last names -->
           <div class="row mb-4">
-
             <div class="col">
               <div data-mdb-input-init class="form-outline">
                 <input type="text" id="email" class="form-control"/>
@@ -48,13 +41,9 @@
           </div>
           <div class="row mb-4">
             <div class="col d-flex justify-content-center">
-              <a href="/html/register.html">Não tem uma conta? Cadastre-se</a>
-            </div>
-            <div class="col d-flex justify-content-center">
               <a href="#">Esqueceu a senha?</a>
             </div>
           </div>
-          <!-- Submit button -->
           <button id="button" data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4 ">ENTRAR</button>
         </form>
         <div id="status"></div>
@@ -73,6 +62,13 @@
   <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js"></script>
   <script src="/api/login.js"></script>
   <script src="/js/navigation.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (e) {
+      e.preventDefault()
+      document.getElementById("btn-toggle-sidebar").style.display = "none"
+    })
+  </script>
 </body>
 
 </html>

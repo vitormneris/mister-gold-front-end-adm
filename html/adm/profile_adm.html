@@ -79,8 +79,7 @@
     document.getElementById("buttonLogOff").addEventListener("click", function (event) {
       if (window.confirm("Deseja deslogar sua conta?")) {
         localStorage.removeItem("token")
-        localStorage.removeItem("cart")
-        window.location.href = "/html/login.html"
+        window.location.href = "/index.html"
       }
     })
   </script>
@@ -110,8 +109,8 @@
     }
   </script>
 
-  <script type="module" src="../../api/adm/updateAdministrator.js"></script>
-  <script type="module" src="../../api/adm/findAdministrator.js"></script>
+  <script type="module" src="/api/adm/updateAdministrator.js"></script>
+  <script type="module" src="/api/adm/findAdministrator.js"></script>
   <script src="/js/navigation.js"></script>
   <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js"></script>
 
