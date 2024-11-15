@@ -2,7 +2,7 @@ import { validationAdm } from "/api/validationAdm.js"
 
 const token = localStorage.getItem("token");
 let currentPage = 0; // Página inicial
-const pageSize = 10; // Número de itens por página
+const pageSize = 5; // Número de itens por página
 
 validationAdm(token).then(id => {
     fetchData();

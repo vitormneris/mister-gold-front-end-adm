@@ -37,22 +37,6 @@ function showData(data) {
     tdDetails.value = data.description
     tdDetails.focus()
 
-    const tdMaterial = document.getElementById("material")
-    tdMaterial.value = data.material
-    tdMaterial.focus()
-
-    const tdSize = document.getElementById("size")
-    tdSize.value = data.size
-    tdSize.focus()
-
-    const tdWeight = document.getElementById("weight")
-    tdWeight.value = data.weight
-    tdWeight.focus()
-
-    const tdColor = document.getElementById("color")
-    tdColor.value = data.color
-    tdColor.focus()
-
     const tdQuantity = document.getElementById("quantity")
     tdQuantity.value = data.quantity
     tdQuantity.focus()

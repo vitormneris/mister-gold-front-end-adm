@@ -8,10 +8,6 @@ validationAdm(token).then(id => {
         event.preventDefault()
 
         const name = document.getElementById("name").value
-        const color = document.getElementById("color").value
-        const weight = document.getElementById("weight").value
-        const size = document.getElementById("size").value
-        const material = document.getElementById("material").value
         const price = document.getElementById("price").value
         const quantity = document.getElementById("quantity").value
         const description = document.getElementById("description").value
@@ -31,10 +27,6 @@ validationAdm(token).then(id => {
     
         product.append("product", new Blob([JSON.stringify({
             "name": name,
-            "color": color,
-            "weight": weight,
-            "size": size,
-            "material": material,
             "price": price,
             "quantity": quantity,
             "description": description,

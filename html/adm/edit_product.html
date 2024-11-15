@@ -14,124 +14,89 @@
 
 <body>
     <div class="app-container">
-        <header id="navbar">
-            <!-- Navbar -->
+        <header id="navbar"></header>
+        <aside class="sidebar" id="sidebar"></aside>
 
-        </header>
-        <!-- sidebar -->
-        <aside class="sidebar" id="sidebar">
-        </aside>
-        <section style="margin-left: 50%; width: 100%; max-width: 1200px; margin: auto; 
-            background-image: url('/images/torcos.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;">
-            <div
-                style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; height: 100vh; border: 1px solid #000;">
-                <label for="image">
-                    <img id="selectedImage" src="/images/inserir_img.png" alt="example placeholder"
-                        style="width: 300px;" />
-                </label>
-                <input id="image" type="file" style="display: none;" />
-                <div
-                    style="margin: 10px; padding: 20px; background-color: #f0f0f0; border: 1px solid #ccc; flex: 1 1 300px;">
-                    <form>
-                        <h2 style="text-align: center">Editar produto</h2>
-
-                        <div class="row mb-4">
-                            <div class="col">
-                                <div data-mdb-input-init class="form-outline">
-                                    <input type="text" id="name" class="form-control" />
-                                    <label class="form-label" for="name">Nome</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-4">
-                            <div class="col">
-                                <div data-mdb-input-init class="form-outline">
-                                    <input type="text" id="color" class="form-control" />
-                                    <label class="form-label" for="color">Cor</label>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div data-mdb-input-init class="form-outline">
-                                    <input type="number" id="weight" class="form-control" />
-                                    <label class="form-label" for="weight">Peso em gramas</label>
-                                </div>
-                            </div>
-                        </div>
+        <section style="margin-left: 50%; width: 100%; max-width: 1200px; margin: auto; background-position: center;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; height: 100vh;">
 
 
-                        <div class="row mb-4">
-                            <div class="col">
-                                <div data-mdb-input-init class="form-outline">
-                                    <input type="number" id="size" class="form-control" />
-                                    <label class="form-label" for="size">Tamanho em cm</label>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div data-mdb-input-init class="form-outline">
-                                    <input type="text" id="material" class="form-control" />
-                                    <label class="form-label" for="material">Material</label>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="row mb-4">
-                            <div class="col">
-                                <div data-mdb-input-init class="form-outline">
-                                    <input type="number" id="price" class="form-control" />
-                                    <label class="form-label" for="price">Preço R$</label>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div data-mdb-input-init class="form-outline">
-                                    <input type="number" id="quantity" class="form-control" />
-                                    <label class="form-label" for="quantity">Quantidade</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-4">
-                            <div class="col">
-                                <div data-mdb-input-init class="form-outline">
-                                    <input type="text" id="description" class="form-control" />
-                                    <label class="form-label" for="description">Descrição</label>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div>
-                            <label class="categoryLabel">Categorias:</label><br>
-                            <select id="categoriesOptions" multiple>
-                            </select>
-                        </div>
-
-                        <div class="centralize_btn">
-                            <div id="buttonUpdate" class="d-flex btn_box">
-                                <div data-mdb-ripple-init class="btn btn-primary btn-rounded">
-                                    <label class="form-label text-white m-1" for="save">Atualizar</label>
-                                    <input type="submit" class="form-control d-none" id="save">
-                                </div>
-                            </div>
-
-                            <div id="buttonDelete" class="d-flex btn_box">
-                                <div data-mdb-ripple-init class="btn_delete btn btn-primary btn-rounded">
-                                    <label class="form-label text-white m-1" for="delete">Excluir</label>
-                                    <input type="submit" class="form-control d-none" id="delete">
-                                </div>
-                            </div>
-                        </div>
-
-                    </form>
-                    <div id="status"></div>
+                <div class="mb-4 d-flex justify-content-center">
+                    <label for="image">
+                        <img id="selectedImage" src="/images/inserir_img.png" alt="example placeholder"
+                            style="width: 300px;" />
+                    </label>
+                    <input id="image" type="file" style="display: none;" />
                 </div>
+
+
+                <div style="margin: 10px; padding: 20px; background-color: #f0f0f0; border-radius: 20px ; flex: 1 1 300px;">
+
+                <form>
+
+
+                    <div class="row mb-4">
+                        <h1 class="title_NC">Edite este produto produto</h1>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="name" class="form-control" />
+                                <label class="form-label" for="name">Nome</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="number" id="price" class="form-control" />
+                                <label class="form-label" for="price">Preço R$</label>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="number" id="quantity" class="form-control" />
+                                <label class="form-label" for="quantity">Quantidade</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="description" class="form-control" />
+                                <label class="form-label" for="description">Descrição</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="categories">
+                        <label class="categoryLabel">Categorias:</label><br>
+                        <select class="form-select" multiple aria-label="Multiple select example" id="categoriesOptions" multiple>
+                        </select>
+                    </div>
+                    <div class="centralize_btn">
+                        <div id="buttonUpdate" class="d-flex btn_box">
+                            <div data-mdb-ripple-init class="btn btn-primary btn-rounded">
+                                <label class="form-label text-white m-1" for="save">Atualizar</label>
+                                <input type="submit" class="form-control d-none" id="save">
+                            </div>
+                        </div>
+
+                        <div id="buttonDelete" class="d-flex btn_box">
+                            <div data-mdb-ripple-init class="btn_delete btn btn-primary btn-rounded">
+                                <label class="form-label text-white m-1" for="delete">Excluir</label>
+                                <input type="submit" class="form-control d-none" id="delete">
+                                <!-- alterar o botão de submit? -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div id="status"></div>
+            </div>
             </div>
         </section>
     </div>

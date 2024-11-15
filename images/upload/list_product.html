@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="/node_modules/mdb-ui-kit/css/mdb.min.css" />
-    <link rel="stylesheet" href="/css/adm/adm_UserTable.css">
+    <link rel="stylesheet" href="/css/adm/list_category.css">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Tabela de Usuarios</title>
+    <title>Lista de produtos</title>
 </head>
 <body>
   <div class="app-container">
-    <header id="navbar">
-     
-  </header>
-      <aside class="sidebar" id="sidebar">
-      </aside>
+    <header id="navbar"></header>
+      <aside class="sidebar" id="sidebar"></aside>
+
     <div class="title_contanier">
-        <h1 class="page_title">Lista de Usuários</h1>
+        <h1 class="page_title">Lista de produtos</h1>
         <div class="title_line" aling="center"></div>
     </div>
 
-    <section class="intro">
+  <div id="messageError"></div>
+
+    <section id="sectionMain" class="intro">
         <div class="gradient-custom-1 h-100">
           <div class="d-flex align-items-center">
             <div class="container">
@@ -32,19 +32,21 @@
                       <thead>
                         <tr>
                           <th scope="col">NOME</th>
-                          <th scope="col">E-MAIL</th>
-                          <th scope="col">TELEFONE</th>
-                          <th scope="col">ENDEREÇO</th>
-                          <th scope="col">DATA DE CRIAÇÃO</th>
-
+                          <th scope="col">PREÇO</th>
+                          <th scope="col">IMAGEM</th>
+                          <th scope="col">DESCRIÇÃO</th>
+                          <th scope="col">MATERIAL</th>
+                          <th scope="col">TAMANHO</th>
+                          <th scope="col">PESO</th>
+                          <th scope="col">COR</th>
+                          <th scope="col">QUANTIDADE</th>    
+                          <th scope="col">CONTROLE</th>        
                         </tr>
                       </thead>
                       <tbody id="container">
-                
+                        
                       </tbody>
                     </table>
-                    <div id="page">
-
                     <nav aria-label="Page navigation example">
                       <ul class="pagination">
                         <li class="page-item">
@@ -62,7 +64,9 @@
                         </li>
                       </ul>
                     </nav>
-                    </div>
+
+                    <a href="/html/adm/new_product.html" class="btn btn-dark"> Criar </a>
+
                   </div>
                 </div>
               </div>
@@ -79,9 +83,44 @@
             <a href="#" style="color: #facc15; margin: 0 10px">Política de Privacidade</a>
         </div>
     </footer>
-    
-      <script type="module" src="../../api/client/listClient.js"></script>
-      <script src="/js/navigation.js"></script>
-      <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js"></script>
+
+    <script>
+
+        fetch('http://localhost:8084/categorias?page=0&pageSize=10&isActive=true', {
+            method: "GET"
+        }).then(
+        response => {
+            if (response.status === 200) {
+                return response.json()
+            }
+        }).then(data => {
+          if (data.content.length == 0) {
+            const sectionMain = document.getElementById("sectionMain")
+            sectionMain.style.visibility = "hidden"
+            const message = document.getElementById("messageError")
+            message.innerText = "Adicione uma categoria antes de adicionar um produto"
+            message.style.margin = "auto"
+            message.style.fontSize = "30px"
+            message.style.color = "red"
+          }
+        }).catch(error => {
+          const sectionMain = document.getElementById("sectionMain")
+          sectionMain.style.visibility = "hidden" 
+          const message = document.getElementById("messageError")
+          message.innerText = "Houve uma problema ao obter as categorias"
+          message.style.margin = "auto"
+          message.style.fontSize = "30px"
+          message.style.color = "red"
+        })
+    </script>
+
+    <script>
+      function redirectToProductPage(productId) {
+         window.location.href = `/html/adm/edit_product.html?id=${productId}`;
+       }
+      </script>
+      <script type="module" src="/api/product/listProduct.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js" ></script>
 </body>
 </html>

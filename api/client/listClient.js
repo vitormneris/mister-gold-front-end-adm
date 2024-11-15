@@ -2,7 +2,7 @@ import { validationAdm } from "/api/validationAdm.js"
 
 const token = localStorage.getItem("token");
 let currentPage = 0; 
-const pageSize = 10;
+const pageSize = 5;
 
 validationAdm(token).then(id => {
     fetchData();

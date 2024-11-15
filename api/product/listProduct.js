@@ -2,7 +2,7 @@ import { validationAdm } from "/api/validationAdm.js"
 
 const token = localStorage.getItem("token");
 let currentPage = 0;
-const pageSize = 10;
+const pageSize = 5;
 
 validationAdm(token).then(id => {
     fetchData();
@@ -40,19 +40,21 @@ validationAdm(token).then(id => {
         const divContainer = document.getElementById("container");
         divContainer.innerHTML = "";
 
-        data.content.forEach(contents => {
+        data.content.forEach(product => {
+            let list_category = []
+            product.categories.forEach(cat => {
+                list_category.push(cat.name)
+            })
+
             const cardProducts = `
                 <tr>
-                    <td>${contents.name}</td>
-                    <td>${contents.price}</td>
-                    <td><img src="${contents.imageUrl}" style="width: 50px; height: 50px"></td>
-                    <td>${contents.description}</td>
-                    <td>${contents.material}</td>
-                    <td>${contents.size}</td>
-                    <td>${contents.weight}</td>
-                    <td>${contents.color}</td>
-                    <td>${contents.quantity}</td>
-                    <td><a onclick="redirectToProductPage('${contents.id}')" class="btn btn-primary"> Editar </a></td>
+                    <td style="max-width: 300px;">${product.name}</td>
+                    <td style="max-width: 300px;">${product.price}</td>
+                    <td style="max-width: 300px;"><img src="${product.imageUrl}" style="width: 50px; height: 50px"></td>
+                    <td style="max-width: 300px;">${product.description}</td>
+                    <td style="max-width: 300px;">${product.quantity}</td>
+                    <td style="max-width: 300px;">${list_category}</td>
+                    <td><a onclick="redirectToProductPage('${product.id}')" class="btn btn-primary"> Editar </a></td>
                 </tr>`;
             divContainer.innerHTML += cardProducts;
         });
