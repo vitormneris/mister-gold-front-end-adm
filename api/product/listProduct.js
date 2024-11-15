@@ -49,8 +49,8 @@ validationAdm(token).then(id => {
             const cardProducts = `
                 <tr>
                     <td style="max-width: 300px;">${product.name}</td>
-                    <td style="max-width: 300px;">${product.price}</td>
-                    <td style="max-width: 300px;"><img src="${product.imageUrl}" style="width: 50px; height: 50px"></td>
+                    <td style="max-width: 300px;">${product.price.toFixed(2)}</td>
+                    <td style="max-width: 300px;"><img src="${product.imageUrl}" style="width: 50px; height: 50px; border: 1px solid black; border-radius: 10px"></td>
                     <td style="max-width: 300px;">${product.description}</td>
                     <td style="max-width: 300px;">${product.quantity}</td>
                     <td style="max-width: 300px;">${list_category}</td>

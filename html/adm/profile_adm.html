@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/adm/profile_adm.css">
 
-  <title>Perfil Administração</title>
+  <title>Perfil de administração</title>
 </head>
 
 <body>
@@ -71,40 +71,8 @@
       <a href="#" style="color: #facc15; margin: 0 10px">Política de Privacidade</a>
     </div>
   </footer>
-  <script>
-    document.getElementById("buttonLogOff").addEventListener("click", function (event) {
-      if (window.confirm("Deseja deslogar sua conta?")) {
-        localStorage.removeItem("token")
-        window.location.href = "/index.html"
-      }
-    })
-  </script>
 
-  <script>
-
-    function disableButton(logic) {
-      document.getElementById("email").readOnly = logic
-      document.getElementById("name").readOnly = logic
-    }
-
-    document.addEventListener("DOMContentLoaded", function (e) {
-      e.preventDefault()
-      disableButton(true)
-    })
-
-    document.getElementById('btnEdit').addEventListener('click', function () {
-      this.style.display = 'none'
-      document.getElementById('btn-group').style.display = 'flex'
-      disableButton(false)
-    })
-
-    function toggleEditButtons() {
-      document.getElementById('btnEdit').style.display = 'block'
-      document.getElementById('btn-group').style.display = 'none'
-      disableButton(true)
-    }
-  </script>
-
+  <script src="/js/account_config.js"></script>
   <script type="module" src="/api/adm/updateAdministrator.js"></script>
   <script type="module" src="/api/adm/findAdministrator.js"></script>
   <script src="/js/navigation.js"></script>

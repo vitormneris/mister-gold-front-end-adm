@@ -27,6 +27,8 @@ function showData(data) {
     tdName.focus()
 
     const tdImageUrl = document.getElementById("selectedImage")
+    tdImageUrl.style.borderRadius = "10px"
+    tdImageUrl.style.border = "1px solid black"
     tdImageUrl.src = data.imageUrl
 
     const tdDetails = document.getElementById("description")

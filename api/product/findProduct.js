@@ -27,10 +27,12 @@ function showData(data) {
     tdName.focus()
 
     const tdImageUrl = document.getElementById("selectedImage")
+    tdImageUrl.style.borderRadius = "10px"
+    tdImageUrl.style.border = "1px solid black"
     tdImageUrl.src = data.imageUrl
 
     const tdPrice = document.getElementById("price")
-    tdPrice.value = data.price
+    tdPrice.value = data.price.toFixed(2)
     tdPrice.focus()
 
     const tdDetails = document.getElementById("description")

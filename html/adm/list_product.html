@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/node_modules/mdb-ui-kit/css/mdb.min.css" />
   <link rel="stylesheet" href="/css/adm/list_category.css">
   <link rel="stylesheet" href="/css/main.css">
-  <title>Lista de produtos</title>
+  <title>Tabela de produtos</title>
 </head>
 
 <body>
@@ -84,41 +84,8 @@
     </div>
   </footer>
 
-  <script>
-
-    fetch('http://localhost:8084/categorias?page=0&pageSize=10&isActive=true', {
-      method: "GET"
-    }).then(
-      response => {
-        if (response.status === 200) {
-          return response.json()
-        }
-      }).then(data => {
-        if (data.content.length == 0) {
-          const sectionMain = document.getElementById("sectionMain")
-          sectionMain.style.visibility = "hidden"
-          const message = document.getElementById("messageError")
-          message.innerText = "Adicione uma categoria antes de adicionar um produto"
-          message.style.margin = "auto"
-          message.style.fontSize = "30px"
-          message.style.color = "red"
-        }
-      }).catch(error => {
-        const sectionMain = document.getElementById("sectionMain")
-        sectionMain.style.visibility = "hidden"
-        const message = document.getElementById("messageError")
-        message.innerText = "Houve uma problema ao obter as categorias"
-        message.style.margin = "auto"
-        message.style.fontSize = "30px"
-        message.style.color = "red"
-      })
-  </script>
-
-  <script>
-    function redirectToProductPage(productId) {
-      window.location.href = `/html/adm/edit_product.html?id=${productId}`;
-    }
-  </script>
+  <script src="/js/hideen_insert_product.js"> </script>
+  <script src="/js/redirect_page_edit_product.js"></script>
   <script type="module" src="/api/product/listProduct.js"></script>
   <script src="/js/navigation.js"></script>
   <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js"></script>

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/node_modules/mdb-ui-kit/css/mdb.min.css" />
   <link rel="stylesheet" href="/css/adm/list_category.css">
   <link rel="stylesheet" href="/css/main.css">
-  <title>Lista de Categorias</title>
+  <title>Tabela de categorias</title>
 </head>
 
 <body>
@@ -75,11 +75,7 @@
       <a href="#" style="color: #facc15; margin: 0 10px">Política de Privacidade</a>
     </div>
   </footer>
-  <script>
-    function redirectToProductPage(productId) {
-      window.location.href = `/html/adm/edit_category.html?id=${productId}`;
-    }
-  </script>
+  <script src="/js/redirect_page_edit_category.js"> </script>
   <script src="/js/navigation.js"></script>
   <script type="module" src="/api/category/listCategory.js"></script>
   <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js"></script>

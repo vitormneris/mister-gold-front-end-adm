@@ -1,8 +1,8 @@
 import { validationAdm } from "/api/validationAdm.js"
 
 const token = localStorage.getItem("token");
-let currentPage = 0; // Página inicial
-const pageSize = 5; // Número de itens por página
+let currentPage = 0; 
+const pageSize = 5; 
 
 validationAdm(token).then(id => {
     fetchData();
@@ -23,10 +23,10 @@ validationAdm(token).then(id => {
             }
         })
         .then(data => {
-            console.log(data); // Depuração para verificar a resposta
+            console.log(data); 
             if (data && data.content) {
                 showData(data);
-                updatePagination(data.totalPages || 1); // Atualiza paginação com total de páginas
+                updatePagination(data.totalPages || 1); 
             } else {
                 console.log("Nenhum dado encontrado.");
             }
@@ -38,17 +38,17 @@ validationAdm(token).then(id => {
 
     function showData(data) {
         const divContainer = document.getElementById("container");
-        divContainer.innerHTML = ""; // Limpa dados anteriores
+        divContainer.innerHTML = ""
 
-        data.content.forEach(contents => {
-            const cardClients = `
+        data.content.forEach(category => {
+            const cardCategory = `
                 <tr>
-                    <td>${contents.name}</td>
-                    <td><img src="${contents.imageUrl}" style="width: 50px; height: 50px"></td>
-                    <td>${contents.description}</td>
-                    <td><a onclick="redirectToProductPage('${contents.id}')" class="btn btn-primary">Editar</a></td>
+                    <td>${category.name}</td>
+                    <td style="max-width: 300px;"><img src="${category.imageUrl}" style="width: 50px; height: 50px; border: 1px solid black; border-radius: 10px"></td>
+                    <td>${category.description}</td>
+                    <td><a onclick="redirectToProductPage('${category.id}')" class="btn btn-primary">Editar</a></td>
                 </tr>`;
-            divContainer.innerHTML += cardClients;
+            divContainer.innerHTML += cardCategory
         });
     }
 
@@ -77,8 +77,8 @@ validationAdm(token).then(id => {
     }
 
     function handlePaginationClick(event) {
-        event.preventDefault();
-        const page = event.target.getAttribute("data-page");
+        event.preventDefault()
+        const page = event.target.getAttribute("data-page")
         
         if (page === "prev" && currentPage > 0) {
             currentPage--;
@@ -88,8 +88,8 @@ validationAdm(token).then(id => {
             currentPage = parseInt(page);
         }
 
-        fetchData();
+        fetchData()
     }
 }).catch(error => {
-    console.log(error);
-});
+    console.log(error)
+})
