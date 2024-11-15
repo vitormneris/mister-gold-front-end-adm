@@ -3,24 +3,24 @@ html, body, .intro {
 }
 
 
-#send_file{
+#send_file {
     display: none;
 }
 
-.h1_container{
+.h1_container {
     margin-top: 13vh;
     display: flex;
     justify-content: center;
 }
 
-.centralize{
+.centralize {
     width: 100%;
     height: 80%;
     display: flex;
     justify-content: center;
 }
 
-.category_box{
+.category_box { 
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -33,22 +33,21 @@ html, body, .intro {
     background-color: white;
 }
 
-.btn_container{
+.btn_container {
     display: flex;
     justify-content: center;
     width: 100%;
-    
 }
 
-.btn_box{
+.btn_box {
     padding-right: 4%;
 }
 
-.btn-rounded{
+.btn-rounded {
     margin-bottom: 20px;
 }
 
-.form-outline{
+.form-outline {
     position: relative;
     width: 50% !important;
     margin-top: 20px;

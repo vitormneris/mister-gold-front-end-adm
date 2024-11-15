@@ -1,4 +1,4 @@
-import { validationAdm } from "../validationAdm.js";
+import { validationAdm } from "/api/validationAdm.js"
 
 const token = localStorage.getItem("token");
 let currentPage = 0; // Página inicial
@@ -44,7 +44,8 @@ validationAdm(token).then(id => {
             const cardClients = `
                 <tr>
                     <td>${contents.name}</td>
-                    <td>${contents.imageUrl}</td>
+                    <td><img src="${contents.imageUrl}" style="width: 50px; height: 50px"></td>
+                    <td>${contents.description}</td>
                     <td><a onclick="redirectToProductPage('${contents.id}')" class="btn btn-primary">Editar</a></td>
                 </tr>`;
             divContainer.innerHTML += cardClients;

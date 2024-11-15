@@ -5,21 +5,23 @@
     background-color:var(--bgColor1);
     padding: 1rem;
     border-radius: 1rem;
-    margin: 1rem;
     justify-content: space-between;
 }
+
 .left{
     display: flex;
     flex-direction: row;
 }
+
 .item-img img{
     width: 18.75rem;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 6px 12px;
 }
+
 .item-name {
     display: flex;
-    max-width: 20rem; /* Defina a largura que deseja para o nome do item */
+    max-width: 20rem; 
 }
 
 .item-name h3 {
@@ -27,6 +29,7 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
 .item-quantity input{
     width: 3rem;
 }
@@ -34,13 +37,16 @@
 .item-name, .item-quantity,.item-price{
     margin-left: 1.5rem;
 }
+
 .item-quantity label, .item-price label{
     display: block;
 }
+
 .item-delete{
     display: flex;
     align-items: center;
 }
+
 .item-delete button{
     background-color: var( --red);
     color: var(--bgColor1);
@@ -52,16 +58,16 @@
     text-transform: uppercase;
     vertical-align: bottom;
 }
+
 .item-delete button .fa-trash{
     margin-right: 0.6rem;
 }
+
 .totalTxt{
     margin-top: 2rem !important;
     margin-bottom: 2rem !important;
 }
+
 .form-container{
-    margin-bottom: 10rem;
-}
-.confirmTxt{
-    color: var(--bgColor1) !important;
+    margin-bottom: 3rem;
 }

@@ -83,3 +83,8 @@
     background-color: var(--bgColor1);
     border-radius: 35px;
 }
+
+
+#categories {
+    margin: 20px;
+}

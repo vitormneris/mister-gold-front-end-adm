@@ -1,4 +1,4 @@
-import { validationAdm } from "../validationAdm.js";
+import { validationAdm } from "/api/validationAdm.js"
 
 const token = localStorage.getItem("token");
 let currentPage = 0;
@@ -23,10 +23,10 @@ validationAdm(token).then(id => {
             }
         })
         .then(data => {
-            console.log(data); // Verifica o conteúdo da resposta
+            console.log(data); 
             if (data && data.content) {
                 showData(data);
-                updatePagination(data.totalPages || 1); // Define o número de páginas
+                updatePagination(data.totalPages || 1); 
             } else {
                 console.log("Nenhum dado encontrado.");
             }
@@ -45,6 +45,7 @@ validationAdm(token).then(id => {
                 <tr>
                     <td>${contents.name}</td>
                     <td>${contents.price}</td>
+                    <td><img src="${contents.imageUrl}" style="width: 50px; height: 50px"></td>
                     <td>${contents.description}</td>
                     <td>${contents.material}</td>
                     <td>${contents.size}</td>

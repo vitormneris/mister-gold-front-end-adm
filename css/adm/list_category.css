@@ -26,17 +26,6 @@ html, body, .intro {
   height: 80%;
 }
 
-/* .gradient-custom-1 { */
-  /* fallback for old browsers */
-  /* background: #cd9cf2; */
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  /* background: -webkit-linear-gradient(to top, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1)); */
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  /* background: linear-gradient(to top, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1)) */
-/* } */
-
 table td, table th {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -59,6 +48,10 @@ tbody td {
   max-height: 70vh;
 }
 
-.btn{
+.btn {
     --mdb-btn-box-shadow-state: 0 8px 9px -4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.btn-dark {
+  margin: 20px;
 }

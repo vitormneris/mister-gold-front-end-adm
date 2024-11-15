@@ -1,4 +1,4 @@
-import { validationAdm } from "../validationAdm.js"
+import { validationAdm } from "/api/validationAdm.js"
 
 const token = localStorage.getItem("token")
 
@@ -8,7 +8,7 @@ validationAdm(token).then(id => {
         event.preventDefault()
 
         const name = document.getElementById("name").value;
-        const description = "desc"// document.getElementById("description").value;
+        const description = document.getElementById("description").value;
 
         const image = document.getElementById("image").files[0]
 

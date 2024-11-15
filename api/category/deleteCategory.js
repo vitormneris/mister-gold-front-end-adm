@@ -1,4 +1,4 @@
-import { validationAdm } from "../validationAdm.js"
+import { validationAdm } from "/api/validationAdm.js"
 
 const token = localStorage.getItem("token")
 

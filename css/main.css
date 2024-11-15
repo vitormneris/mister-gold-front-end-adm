@@ -212,16 +212,17 @@ button:hover {
 .divider-container{
     margin-top: 5rem;
 }
+
 .divider-text{
     margin-left: 10rem;
     font-size: 2.5rem;
 }
 footer{
-background-color: var(--bgColor2);
-color: #fff;
-padding: 20px;
-text-align: center;
-margin-top:20vh;
-margin-top: 0;
+    background-color: var(--bgColor2);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top:20vh;
+    margin-top: 0;
 }
 

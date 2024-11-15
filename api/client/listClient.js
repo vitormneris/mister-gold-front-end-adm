@@ -1,4 +1,4 @@
-import { validationAdm } from "../validationAdm.js";
+import { validationAdm } from "/api/validationAdm.js"
 
 const token = localStorage.getItem("token");
 let currentPage = 0; 
@@ -34,16 +34,31 @@ validationAdm(token).then(id => {
     }
 
     function showData(data) {
+        console.log(data)
         const divContainer = document.getElementById("container");
         divContainer.innerHTML = ""; 
 
-        data.content.forEach(contents => {
+        data.content.forEach(client => {
+
+            const date = new Date(client.infoActivation.creationDate);
+
+            const formattedDate = date.toLocaleString('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+
             const cardClients = `
                 <tr>
-                    <td>${contents.name}</td>
-                    <td>${contents.email}</td>
-                    <td>${contents.phone}</td>
-                    <td>${contents.address.state}/${contents.address.city}</td>
+                    <td>${client.name}</td>
+                    <td>${client.email}</td>
+                    <td>${client.phone}</td>
+                    <td>${client.address.state}/${client.address.city}</td>
+                    <td>${formattedDate}</td>
                 </tr>`;
             divContainer.innerHTML += cardClients;
         });

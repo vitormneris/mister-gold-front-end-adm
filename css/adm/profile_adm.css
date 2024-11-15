@@ -1,3 +1,14 @@
+#main {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    margin-top: 150px;
+    width: 1000px;
+    padding: 40px 150px;
+}
+
 .centralize_btn {
     display: flex;
     justify-content: center;
@@ -39,3 +50,4 @@
 .text-uppercase {
     color: white;
 }
+

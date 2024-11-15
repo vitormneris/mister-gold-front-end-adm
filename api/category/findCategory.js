@@ -29,7 +29,7 @@ function showData(data) {
     const tdImageUrl = document.getElementById("selectedImage")
     tdImageUrl.src = data.imageUrl
 
-    // const tdDetails = document.getElementById("description")
-    // tdDetails.value = data.description
-    // tdDetails.focus()
+    const tdDetails = document.getElementById("description")
+    tdDetails.value = data.description
+    tdDetails.focus()
 }

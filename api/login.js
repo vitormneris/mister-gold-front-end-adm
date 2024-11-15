@@ -25,7 +25,7 @@ document.getElementById("button").addEventListener("click", function(event) {
             data[0].then(json => localStorage.setItem("token", json.token))
             window.location.href = "/html/home.html"
         } if (data[1] == 403) {
-            showData("Senha invalida", "red")
+            showData("Senha inválida", "red")
         } else {
             data[0].then(error => showData(error.message, "red"))
         }

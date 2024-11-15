@@ -39,14 +39,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
         })
     }
 
+    
     function showData(data) {
-        let count = 0
         const mainConteiner = document.getElementById("container")
         mainConteiner.innerHTML = ""; // Limpa os dados anteriores
 
         data.content.forEach(order => {
-            count++
-
 
             const divConteiner = document.createElement("div")
 
@@ -72,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             const firstPartConteiner = `
         <div class="form-container">
-            <h2>Pedido ${count}</h2>
+            <h2>Pedido</h2>
             <hr class="hr" />
             <h3 class="confirmTxt">Por favor, confirme os itens de seu pedido antes de concluir a compra:</h3>
             <hr class="hr" />`
@@ -96,8 +94,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
             <h2 style="color: black; font-size: 25px; margin: 15px">Total do pedido: <span id="totalPrice"  style="color: blue; font-size: 23px">R$ ${order.totalPrice.toFixed(2)}</span></h2>
             <h2 style="color: black; font-size: 25px; margin: 15px">Momento: <span id="moment" style="color: blue;  font-size: 23px">${formattedDate}</span></h2>
             <h2 style="color: black; font-size: 25px; margin: 15px">Status do pedido: <span id="orderStatus" style="color: blue;  font-size: 23px">${order.orderMessage}</span></h2>
-
-            <button class="btn btn-success w-100">Confirmar compra</button>
         </div>`
 
             mainConteiner.innerHTML += firstPartConteiner + divConteiner.outerHTML + secondPartConteiner
@@ -105,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
 
     function updatePagination(totalPages) {
+
         const pagination = document.querySelector(".pagination");
         pagination.innerHTML = `
         <li class="page-item ${currentPage === 0 ? 'disabled' : ''}">

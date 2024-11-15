@@ -1,12 +1,8 @@
-
 .container.adm-cards-container{
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
-    width: 160rem;
-    height: 160rem;
-
 }
 .col-md.adm-card{
     background-color: var(--bgColor2);
