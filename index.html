@@ -17,7 +17,7 @@
     </header>
     <aside class="sidebar" id="sidebar">
     </aside>
-    
+
     <main>
       <div class="form-container login-container">
         <h2>Login</h2>
@@ -27,19 +27,26 @@
           <div class="row mb-4">
             <div class="col">
               <div data-mdb-input-init class="form-outline">
-                <input type="email" id="email" placeholder="Digite o seu e-mail" class="form-control"/>
-                <label class="form-label" for="email">Email</label>
+                <input type="email" id="email" placeholder="Digite o seu e-mail" class="form-control" />
+                <label class="form-label" for="email">Seu E-mail</label>
               </div>
             </div>
           </div>
+
           <div class="row mb-4">
             <div class="col">
-              <div data-mdb-input-init class="form-outline">
-                <input type="text" id="password" placeholder="Digite a sua senha" class="form-control" />
-                <label class="form-label" for="password">Senha</label>
+              <div class="input-group">
+                <div data-mdb-input-init class="form-outline">
+                  <input type="password" id="password" placeholder="Digite a sua senha" class="form-control" />
+                  <label class="form-label" for="password">Sua senha</label>
+                </div>
+                <span id="eyeSpan" class="input-group-text" style="margin: auto;">
+                  <i id="eye" class="far fa-eye-slash"></i>
+                </span>
               </div>
             </div>
           </div>
+
           <button id="button" type="button" class="btn btn-primary btn-block mb-4 ">ENTRAR</button>
         </form>
         <div id="status"></div>
@@ -58,13 +65,8 @@
   <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js"></script>
   <script src="/api/login.js"></script>
   <script src="/js/navigation.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function (e) {
-      e.preventDefault()
-      document.getElementById("btn-toggle-sidebar").style.display = "none"
-    })
-  </script>
+  <script src="/js/hidden_password.js"></script>
+  <script src="/js/hidden_objects.js"></script>
 </body>
 
 </html>

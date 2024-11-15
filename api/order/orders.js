@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     
     function showData(data) {
         const mainConteiner = document.getElementById("container")
-        mainConteiner.innerHTML = ""; // Limpa os dados anteriores
+        mainConteiner.innerHTML = ""
 
         data.content.forEach(order => {
 
@@ -70,10 +70,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             const firstPartConteiner = `
         <div class="form-container">
-            <h2>Pedido</h2>
+            <h1>Pedido</h1>
             <hr class="hr" />
-            <h3 class="confirmTxt">Por favor, confirme os itens de seu pedido antes de concluir a compra:</h3>
-            <hr class="hr" />`
+            
+
+
+            <h2 style="margin: 20px 0px"> Informações do cliente</h2>
+            <div class="clientContainer">
+                <label class="form-label" for="name">Nome do cliente</label>
+                <input type="text" id="name" value="${order.client.name}" class="inputClass form-control-lg" disabled>
+                <label class="form-label" for="email">Nome do email</label>
+                <input type="email" id="email" value="${order.client.email}" class="inputClass form-control-lg" disabled>
+            </div>
+
+            <h2 style="margin: 20px 0px">Informações do pedido</h2>
+            <div class="orderContainer"> `
 
             const date = new Date(order.moment)
 
@@ -89,11 +100,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             const secondPartConteiner = `
 
-            <h2 style="color: black; font-size: 25px; margin: 15px">Nome do cliente: <span id="orderStatus" style="color: blue;  font-size: 23px">${order.client.name}</span></h2>
-            <h2 style="color: black; font-size: 25px; margin: 15px">E-mail do cliente: <span id="orderStatus" style="color: blue;  font-size: 23px">${order.client.email}</span></h2>
-            <h2 style="color: black; font-size: 25px; margin: 15px">Total do pedido: <span id="totalPrice"  style="color: blue; font-size: 23px">R$ ${order.totalPrice.toFixed(2)}</span></h2>
-            <h2 style="color: black; font-size: 25px; margin: 15px">Momento: <span id="moment" style="color: blue;  font-size: 23px">${formattedDate}</span></h2>
-            <h2 style="color: black; font-size: 25px; margin: 15px">Status do pedido: <span id="orderStatus" style="color: blue;  font-size: 23px">${order.orderMessage}</span></h2>
+                <label class="form-label" for="totalPrice">Total do pedido</label>
+                <input type="number" id="totalPrice" value="${order.totalPrice.toFixed(2)}" class="inputClass form-control-lg" disabled>
+                <label class="form-label" for="moment">Momento</label>
+                <input type="text" id="moment" value="${formattedDate}" class="inputClass form-control-lg" disabled>
+                <label class="form-label" for="message">Status do pedido</label>
+                <input type="text" id="message" value="${order.orderMessage}" class="inputClass form-control-lg" disabled>
+            </div>
         </div>`
 
             mainConteiner.innerHTML += firstPartConteiner + divConteiner.outerHTML + secondPartConteiner

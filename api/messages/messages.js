@@ -39,7 +39,11 @@ document.addEventListener("DOMContentLoaded", function() {
     
             const firstPartConteiner = `
             <div class="form-container">
+                <div class="buttonDelete">
+                    <button onclick="deleteMessage('${message.id}')" class="btn btn-danger"><i class="fa-solid fa-trash"></i>APAGAR</button>
+                </div>
                 <h2>Mensagem</h2>
+
                 <hr class="hr" />`
     
             const date = new Date(message.infoActivation.creationDate)
@@ -55,13 +59,16 @@ document.addEventListener("DOMContentLoaded", function() {
             })
     
             const secondPartConteiner = `
-    
-                <h2 style="color: black; font-size: 25px; margin: 15px">Nome do cliente: <span id="orderStatus" style="color: blue;  font-size: 23px">${message.senderName}</span></h2>
-                <h2 style="color: black; font-size: 25px; margin: 15px">E-mail do cliente: <span id="orderStatus" style="color: blue;  font-size: 23px">${message.senderEmail}</span></h2>
-                <h2 style="color: black; font-size: 25px; margin: 15px">Mensagem: <span id="totalPrice"  style="color: blue; font-size: 23px">${message.text}</span></h2>
-                <h2 style="color: black; font-size: 25px; margin: 15px">Data de envio: <span id="moment" style="color: blue;  font-size: 23px">${formattedDate}</span></h2>
-                
-               <button onclick="deleteMessage('${message.id}')" class="fa-solid fa-trash"">APAGAR</button>
+                <div class="orderContainer"> 
+                    <label class="form-label" for="senderName">Nome do cliente</label>
+                    <input type="text" id="senderName" value="${message.senderName}" class="inputClass form-control-lg" disabled>
+                    <label class="form-label" for="senderEmail">E-mail do cliente</label>
+                    <input type="text" id="senderEmail" value="${message.senderEmail}" class="inputClass form-control-lg" disabled>
+                    <label class="form-label" for="text">Mensagem</label>
+                    <input type="text" id="text" value="${message.text}" class="inputClass form-control-lg" disabled>
+                    <label class="form-label" for="date">Data de envio</label>
+                    <input type="text" id="date" value="${formattedDate}" class="inputClass form-control-lg" disabled>
+                </div>
             </div>`
     
             mainConteiner.innerHTML += firstPartConteiner + secondPartConteiner

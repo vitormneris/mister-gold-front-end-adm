@@ -17,51 +17,62 @@
     <header id="navbar"></header>
     <aside class="sidebar" id="sidebar"></aside>
 
-    <section class="vh-100 bg-image">
-      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-        <div class="container h-100">
-          <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-              <div class="card" style="border-radius: 15px;">
-                <div class="card-body p-5">
-                  <h2 class="text-uppercase text-center mb-5">Cadastre uma conta de administrador</h2>
+    <div class="card" style="border-radius: 15px;">
+      <div class="card-body p-5">
+        <h2 class="text-uppercase text-center mb-5">Cadastre uma conta de administrador</h2>
 
-                  <form>
+        <form>
 
-                    <div data-mdb-input-init class="form-outline mb-4">
-                      <input type="text" id="name" placeholder="" class="form-control form-control-lg" />
-                      <label class="form-label" for="name">Digite seu mome</label>
-                    </div>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="name" placeholder="Digite o seu nome" class="form-control form-control-lg" />
+            <label class="form-label" for="name">Digite seu nome</label>
+          </div>
 
-                    <div data-mdb-input-init class="form-outline mb-4">
-                      <input type="email" id="email" class="form-control form-control-lg" />
-                      <label class="form-label" for="email">Digite seu e-mail</label>
-                    </div>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="email" id="email" placeholder="Digite o seu e-mail" class="form-control form-control-lg" />
+            <label class="form-label" for="email">Digite seu e-mail</label>
+          </div>
 
-                    <div data-mdb-input-init class="form-outline mb-4">
-                      <input type="password" id="password_first" class="form-control form-control-lg" />
-                      <label class="form-label" for="password_first">Digite sua senha</label>
-                    </div>
-
-                    <div data-mdb-input-init class="form-outline mb-4">
-                      <input type="password" id="password_second" class="form-control form-control-lg" />
-                      <label class="form-label" for="password_second">Digite sua senha novamente</label>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                      <button id="button" type="button" data-mdb-button-init data-mdb-ripple-init
-                        class="btn btn-success btn-block btn-lg gradient-custom-4">Cadastrar</button>
-                    </div>
-                    <br><br>
-                    <div id="status"></div>
-                  </form>
+          <div class="row mb-4">
+            <div class="col">
+              <div class="input-group">
+                <div data-mdb-input-init class="form-outline">
+                  <input type="password" id="password_first" placeholder="Digite a sua senha"
+                    class="form-control form-control-lg" />
+                  <label class="form-label" for="password_first">Sua senha</label>
                 </div>
+                <span id="eyeSpan1" class="input-group-text" style="margin: auto;">
+                  <i id="eye1" class="far fa-eye-slash"></i>
+                </span>
               </div>
             </div>
           </div>
-        </div>
+
+          <div class="row mb-4">
+            <div class="col">
+              <div class="input-group">
+                <div data-mdb-input-init class="form-outline">
+                  <input type="password" id="password_second" placeholder="Digite a sua senha novamente"
+                    class="form-control form-control-lg" />
+                  <label class="form-label" for="password_second">Repita sua senha</label>
+                </div>
+                <span id="eyeSpan2" class="input-group-text" style="margin: auto;">
+                  <i id="eye2" class="far fa-eye-slash"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="d-flex justify-content-center">
+            <button id="button" type="button" data-mdb-button-init data-mdb-ripple-init
+              class="btn btn-success btn-block btn-lg gradient-custom-4">Cadastrar</button>
+          </div>
+          <br><br>
+          <div id="status"></div>
+        </form>
       </div>
-    </section>
+    </div>
 
   </div>
   <footer>
@@ -75,6 +86,7 @@
   <script type="module" src="/api/adm/insertAdministrator.js"></script>
   <script src="/js/navigation.js"></script>
   <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js"></script>
-
+  <script src="/js/hidden_two_passwords .js"></script>
 </body>
+
 </html>

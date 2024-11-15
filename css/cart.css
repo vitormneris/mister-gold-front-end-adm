@@ -71,3 +71,8 @@
 .form-container{
     margin-bottom: 3rem;
 }
+
+.buttonDelete {
+    display: flex;
+    justify-content: end;
+}

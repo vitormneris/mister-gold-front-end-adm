@@ -1,43 +1,35 @@
-.title_contanier{
-    display: flex;
-    justify-content: center;
-    margin-top: 7vw;
-    margin-bottom: 2vw;
-    flex-direction:column;
-    align-items:center;
+.title_contanier {
+  display: flex;
+  justify-content: center;
+  margin-top: 7vw;
+  margin-bottom: 2vw;
+  flex-direction: column;
+  align-items: center;
 }
 
-.page_title{
-    text-align: center;
+.page_title {
+  text-align: center;
 }
 
-.title_line{
-	height:4px;
-	width: 30%;
-	background-color: black;
-    border-radius: 35px;
+.title_line {
+  height: 4px;
+  width: 30%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 35px;
 }
 
-html, body, .intro {
+html,
+body,
+.intro {
   height: 100%;
 }
 
-.intro{
+.intro {
   height: 80%;
 }
 
-/* .gradient-custom-1 { */
-  /* fallback for old browsers */
-  /* background: #cd9cf2; */
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  /* background: -webkit-linear-gradient(to top, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1)); */
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  /* background: linear-gradient(to top, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1)) */
-/* } */
-
-table td, table th {
+table td,
+table th {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -48,12 +40,37 @@ tbody td {
   color: #999999;
 }
 
-.table{
+.table {
   border-radius: 10%;
 }
 
-.table-responsive{
+.text-uppercase {
+  color: #ffffff;
+}
+
+.table-responsive {
   overflow-x: auto;
   overflow-y: auto;
   max-height: 70vh;
+}
+
+.form-outline {
+  --mdb-input-focus-label-color: #ffffff;
+  --mdb-input-focus-border-color: #ffffff;
+  --mdb-surface-color: #ffffff;
+}
+
+.form-outline .form-control~.form-label {
+  color: #ffffff;
+}
+
+#button {
+  width: 300px;
+  margin-top: 40px;
+}
+
+.card {
+  width: 1000px;
+  margin: auto;
+  padding: 0px 150px;
 }
