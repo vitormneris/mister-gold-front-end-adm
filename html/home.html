@@ -12,6 +12,17 @@
   <link rel="stylesheet" href="/css/categoria.css">
   <link rel="stylesheet" href="/css/account.css">
   <link rel="stylesheet" href="/css/cart.css">
+  <script type="module">
+    import { validationAdm } from "/api/validationAdm.js";
+    const token = localStorage.getItem("token");
+    validationAdm(token)
+      .then(id => {
+          console.log("usuario valido")
+      }).catch(error => {
+        console.log(error);
+        console.log("usuario não valido")
+      });
+  </script>
 
 </head>
 
@@ -20,31 +31,50 @@
     <header id="navbar"></header>
     <aside class="sidebar" id="sidebar"></aside>
     <main>
-      <div class="container adm-cards-container">
-        <h2 class="adm-cards-label">Veja os pedidos feitos</h2>
-        <hr class="hr" />
 
-        <div id="container"></div>
-        
+      <div class="container containerlinks">
+        <div class="row">
+          <a href="/html/adm/orders.html" class="col-md">
+            <i class="fa-solid fa-receipt"></i>
+            <p>Pedidos</p>
+          </a>
+          <a href="/html/adm/profile_adm.html" class="col-md">
+            <i class="fa-solid fa-id-badge"></i>
+            <p href="/html/adm/profile_adm.html">Perfil administrador</p>
+          </a>
+
+        </div>
+
+        <div class="row">
+          <a href="/html/messages.html" class="col-md">
+            <i class="fa-solid fa-envelope"></i>
+            <p href="/html/messages.html">Mensagens</p>
+          </a>
+          <a href="/html/adm/list_client.html" class="col-md">
+            <i class="fa-solid fa-users"></i>
+            <p href="/html/adm/list_client.html">Lista de clientes</p>
+          </a>
+
+        </div>
+
+        <div class="row">
+          <a href="/html/adm/list_product.html" class="col-md">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <p href="/html/adm/list_product.html">Lista de produtos</p>
+          </a>
+          <a href="/html/adm/list_category.html" iv class="col-md">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <p href="/html/adm/list_category.html">Lista de categorias</p>
+          </a>
+        </div>
       </div>
-      <div class="page">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+      <div>
+
+
+
+
+
+
       </div>
     </main>
 
@@ -57,7 +87,8 @@
     </div>
   </footer>
 
-  <script type="module" src="/api/order/orders.js"></script>
+
+
   <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js"></script>
   <script src="/js/navigation.js"></script>
 

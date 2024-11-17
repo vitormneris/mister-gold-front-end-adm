@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mistergold</title>
+  <link rel="stylesheet" href="/node_modules/mdb-ui-kit/css/mdb.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/categoria.css">
+  <link rel="stylesheet" href="/css/account.css">
+  <link rel="stylesheet" href="/css/cart.css">
+
+</head>
+
+<body>
+  <div class="app-container">
+    <header id="navbar"></header>
+    <aside class="sidebar" id="sidebar"></aside>
+    <main>
+      <div class="container adm-cards-container">
+        <h2 class="adm-cards-label">Veja os pedidos feitos</h2>
+        <hr class="hr" />
+
+        <div id="container"></div>
+        
+      </div>
+      <div class="page">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+
+  </div>
+  <footer>
+    <p>&copy; 2024 Mistergold. Todos os direitos reservados.</p>
+    <div>
+      <a href="#" style="color: #facc15; margin: 0 10px">Termos de Serviço</a>
+      <a href="#" style="color: #facc15; margin: 0 10px">Política de Privacidade</a>
+    </div>
+  </footer>
+
+  <script type="module" src="/api/order/orders.js"></script>
+  <script src="/node_modules/mdb-ui-kit/js/mdb.umd.min.js"></script>
+  <script src="/js/navigation.js"></script>
+
+</body>
+
+</html>

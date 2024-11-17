@@ -1,52 +1,60 @@
-import { validationAdm } from "/api/validationAdm.js"
+import { validationAdm } from "/api/validationAdm.js";
+import { updateOrderStatus } from "./updateOrderStatus.js";
 
-const token = localStorage.getItem("token")
+const token = localStorage.getItem("token");
 
-document.addEventListener("DOMContentLoaded", function (e) {
-    let currentPage = 0
-    const pageSize = 3
+document.addEventListener("DOMContentLoaded", function () {
+    let currentPage = 0;
+    const pageSize = 3;
 
-    fetchData()
+    fetchData();
 
-    document.querySelector(".pagination").addEventListener("click", handlePaginationClick)
+    document.querySelector(".pagination").addEventListener("click", handlePaginationClick);
 
     function fetchData() {
-
-        validationAdm(token).then(id => {
-            fetch(`http://localhost:8084/pedidos?page=${currentPage}&pageSize=${pageSize}&isActive=true`, {
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": "Bearer " + token
-                },
-                method: 'GET'
+        validationAdm(token)
+            .then(id => {
+                fetch(`http://localhost:8084/pedidos?page=${currentPage}&pageSize=${pageSize}&isActive=true`, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer " + token
+                    },
+                    method: 'GET'
+                })
+                    .then(response => {
+                        if (response.status === 200) return response.json();
+                    })
+                    .then(data => {
+                        if (data && data.content) {
+                            showData(data);
+                            updatePagination(data.totalPages || 1);
+                        } else {
+                            console.log("Nenhum dado encontrado.");
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
             })
-                .then(response => {
-                    if (response.status === 200) return response.json();
-                })
-                .then(data => {
-                    if (data && data.content) {
-                        showData(data);
-                        updatePagination(data.totalPages || 1)
-                    } else {
-                        console.log("Nenhum dado encontrado.")
-                    }
-                })
-                .catch(error => {
-                    console.log(error)
-                });
-        }).catch(error => {
-            console.log(error)
-        })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
-    
     function showData(data) {
-        const mainConteiner = document.getElementById("container")
-        mainConteiner.innerHTML = ""
+        const mainContainer = document.getElementById("container");
+        mainContainer.innerHTML = "";
+
+        const statusOptions = [
+            { key: "WAITING_PAYMENT", value: "Esperando pagamento." },
+            { key: "PAID", value: "Pago." },
+            { key: "SHIPPED", value: "Enviado." },
+            { key: "DELIVERED", value: "Entregue." },
+            { key: "CANCELED", value: "Cancelado." }
+        ];
 
         data.content.forEach(order => {
-
-            const divConteiner = document.createElement("div")
+            const divContainer = document.createElement("div");
 
             order.items.forEach(item => {
                 const itemHTML = `
@@ -57,37 +65,33 @@ document.addEventListener("DOMContentLoaded", function (e) {
                         </div>
                         <div class="item-quantity">
                             <label for="item-quantity">Quantidade:</label>
-                            <span id="quantity" class="item-quantity")">${item.quantity}</span>
+                            <span id="quantity" class="item-quantity">${item.quantity}</span>
                         </div>
                         <div class="item-price">
                             <label for="item-price">Valor unitário:</label>
                             <h3>R$ ${item.price.toFixed(2)}</h3>
                         </div>
+                    </div>`;
+                divContainer.innerHTML += itemHTML;
+            });
+
+            const firstPartContainer = `
+                <div class="form-container">
+                    <h1>Pedido</h1>
+                    <hr class="hr" />
+
+                    <h2 style="margin: 20px 0px"> Informações do cliente</h2>
+                    <div class="clientContainer">
+                        <label class="form-label" for="name">Nome do cliente</label>
+                        <input type="text" id="name" value="${order.client.name}" class="inputClass form-control-lg" disabled>
+                        <label class="form-label" for="email">Email do cliente</label>
+                        <input type="email" id="email" value="${order.client.email}" class="inputClass form-control-lg" disabled>
                     </div>
-                </div>`
-                divConteiner.innerHTML += itemHTML;
-            })
 
-            const firstPartConteiner = `
-        <div class="form-container">
-            <h1>Pedido</h1>
-            <hr class="hr" />
-            
+                    <h2 style="margin: 20px 0px">Informações do pedido</h2>
+                    <div class="orderContainer">`;
 
-
-            <h2 style="margin: 20px 0px"> Informações do cliente</h2>
-            <div class="clientContainer">
-                <label class="form-label" for="name">Nome do cliente</label>
-                <input type="text" id="name" value="${order.client.name}" class="inputClass form-control-lg" disabled>
-                <label class="form-label" for="email">Nome do email</label>
-                <input type="email" id="email" value="${order.client.email}" class="inputClass form-control-lg" disabled>
-            </div>
-
-            <h2 style="margin: 20px 0px">Informações do pedido</h2>
-            <div class="orderContainer"> `
-
-            const date = new Date(order.moment)
-
+            const date = new Date(order.moment);
             const formattedDate = date.toLocaleString('pt-BR', {
                 day: '2-digit',
                 month: '2-digit',
@@ -96,25 +100,75 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 minute: '2-digit',
                 second: '2-digit',
                 hour12: false
-            })
+            });
 
-            const secondPartConteiner = `
-
+            const secondPartContainer = `
                 <label class="form-label" for="totalPrice">Total do pedido</label>
                 <input type="number" id="totalPrice" value="${order.totalPrice.toFixed(2)}" class="inputClass form-control-lg" disabled>
                 <label class="form-label" for="moment">Momento</label>
                 <input type="text" id="moment" value="${formattedDate}" class="inputClass form-control-lg" disabled>
-                <label class="form-label" for="message">Status do pedido</label>
-                <input type="text" id="message" value="${order.orderMessage}" class="inputClass form-control-lg" disabled>
+                <div id="changeStatus">
+                    <label class="form-label">Status do pedido:</label><br>
+                    <select class="form-select statusOptions" id="status-${order.id}" style="border:2px solid black;" disabled>
+                        ${statusOptions.map(status =>
+                            `<option value="${status.key}" ${status.value === order.orderMessage ? "selected" : ""}>
+                                ${status.value}
+                            </option>`
+                        ).join('')}
+                    </select>
+                    <button data-mdb-ripple-init type="button" class="btn btn-warning btn-block mt-3" id="btnEdit-${order.id}">Editar</button>
+                    <div id="btn-group-${order.id}" style="display: none;">
+                        <button class="btn btn-danger mt-3 me-3" id="btnCancel-${order.id}">Cancelar Alteração</button>
+                        <button class="btn btn-primary mt-3 send-status" data-order-id="${order.id}" id="buttonUpdate-${order.id}">Atualizar Status</button>
+                    </div>
+                </div>
             </div>
-        </div>`
+        </div>`;
 
-            mainConteiner.innerHTML += firstPartConteiner + divConteiner.outerHTML + secondPartConteiner
-        })
+            mainContainer.innerHTML += firstPartContainer + divContainer.outerHTML + secondPartContainer;
+
+            // Configurando os botões
+            const editButton = document.getElementById(`btnEdit-${order.id}`);
+            const cancelButton = document.getElementById(`btnCancel-${order.id}`);
+            const updateButton = document.getElementById(`buttonUpdate-${order.id}`);
+            const selectElement = document.getElementById(`status-${order.id}`);
+
+            editButton.addEventListener("click", () => {
+                toggleEditButtons(order.id, true);
+                selectElement.style.borderColor="#facc15"
+                selectElement.disabled = false; // Habilita o <select>
+            });
+
+            cancelButton.addEventListener("click", () => {
+                toggleEditButtons(order.id, false);
+                  selectElement.style.border="2px solid black"
+                selectElement.disabled = true; // Desabilita o <select>
+            });
+
+            updateButton.addEventListener("click", () => {
+                toggleEditButtons(order.id, false);
+                selectElement.style.border="2px solid black"
+                selectElement.disabled = true; // Desabilita o <select>
+            });
+        });
+
+        document.querySelectorAll(".send-status").forEach(button => {
+            button.addEventListener("click", function (e) {
+                const orderId = e.target.getAttribute("data-order-id");
+                const selectElement = document.getElementById(`status-${orderId}`);
+                const newStatus = selectElement.value;
+
+                updateOrderStatus(orderId, newStatus, token);
+            });
+        });
+    }
+
+    function toggleEditButtons(orderId, editMode) {
+        document.getElementById(`btnEdit-${orderId}`).style.display = editMode ? "none" : "block";
+        document.getElementById(`btn-group-${orderId}`).style.display = editMode ? "flex" : "none";
     }
 
     function updatePagination(totalPages) {
-
         const pagination = document.querySelector(".pagination");
         pagination.innerHTML = `
         <li class="page-item ${currentPage === 0 ? 'disabled' : ''}">
@@ -152,5 +206,4 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         fetchData();
     }
-
-})
+});

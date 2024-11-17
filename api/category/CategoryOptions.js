@@ -1,27 +1,22 @@
+export async function getCategoriesList(){
+    try {
+        const response = await fetch('http://localhost:8084/categorias?page=0&pageSize=10&isActive=true', {
+            method: "GET"
+        });
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    fetch('http://localhost:8084/categorias?page=0&pageSize=10&isActive=true', {
-        method: "GET"
-    }).then(
-        response => {
-            if (response.status === 200) {
-                return response.json()
-            }
-        }).then(data => {
-            showData(data)
-        }).catch(error => {
-            console.log(error)
-        })
-
-    function showData(data) {
-        const divConteiner = document.getElementById("categoriesOptions")
-
-        data.content.forEach(contents => {
-
-            const cardCategories = `<option value="${contents.id}">${contents.name}</option>`
-
-            divConteiner.innerHTML += cardCategories
-        })
+        if (response.status === 200) {
+            console.log("Erro de status: " + response.status)
+            const data = await response.json();
+            const categoriesList = []
+            data.content.forEach(category=>{
+                categoriesList.push({"id":category.id,"nome":category.name})
+                console.log(categoriesList)
+            })
+            return categoriesList;
+        }else{
+            console.log("Erro de status: " + response.status)
+        }
+    } catch (error) {
+        console.log(error);
     }
-})
+}

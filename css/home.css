@@ -52,3 +52,35 @@
     color: aliceblue;
     background: rgba(0, 0, 0, 0.39);
 }
+
+.containerlinks{
+    margin-top: 11rem;
+}
+a.col-md{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 25px;
+    margin: 1rem;
+    width: 2rem;
+    height: 10rem;
+    box-shadow: 11px 13px 15px -3px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+a.col-md i{
+    font-size: 3rem;
+    color: var(--bgColor2);
+    display: inline;
+}
+a.col-md p{
+    padding-left: 1.2rem;
+    padding-top: 2.2rem;
+    text-decoration: none;
+    color: orange;
+    font-size: 2rem;
+    display: inline;
+
+}
+a.col-md:hover{
+    transform: scale(1.05);
+}
