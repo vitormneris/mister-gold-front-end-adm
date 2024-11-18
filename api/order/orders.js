@@ -126,40 +126,33 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>`;
 
             mainContainer.innerHTML += firstPartContainer + divContainer.outerHTML + secondPartContainer;
-
-            // Configurando os botões
-            const editButton = document.getElementById(`btnEdit-${order.id}`);
-            const cancelButton = document.getElementById(`btnCancel-${order.id}`);
-            const updateButton = document.getElementById(`buttonUpdate-${order.id}`);
-            const selectElement = document.getElementById(`status-${order.id}`);
-
-            editButton.addEventListener("click", () => {
-                toggleEditButtons(order.id, true);
-                selectElement.style.borderColor="#facc15"
-                selectElement.disabled = false; // Habilita o <select>
-            });
-
-            cancelButton.addEventListener("click", () => {
-                toggleEditButtons(order.id, false);
-                  selectElement.style.border="2px solid black"
-                selectElement.disabled = true; // Desabilita o <select>
-            });
-
-            updateButton.addEventListener("click", () => {
-                toggleEditButtons(order.id, false);
-                selectElement.style.border="2px solid black"
-                selectElement.disabled = true; // Desabilita o <select>
-            });
         });
 
-        document.querySelectorAll(".send-status").forEach(button => {
-            button.addEventListener("click", function (e) {
-                const orderId = e.target.getAttribute("data-order-id");
+        // Delegação de eventos para os botões
+        mainContainer.addEventListener("click", function (e) {
+            const target = e.target;
+
+            if (target.matches(".btn-warning")) { // Botão Editar
+                const orderId = target.id.split("-")[1];
+                toggleEditButtons(orderId, true);
+                const selectElement = document.getElementById(`status-${orderId}`);
+                selectElement.style.borderColor = "#facc15";
+                selectElement.disabled = false;
+            } else if (target.matches(".btn-danger")) { // Botão Cancelar Alteração
+                const orderId = target.id.split("-")[1];
+                toggleEditButtons(orderId, false);
+                const selectElement = document.getElementById(`status-${orderId}`);
+                selectElement.style.border = "2px solid black";
+                selectElement.disabled = true;
+            } else if (target.matches(".btn-primary")) { // Botão Atualizar Status
+                const orderId = target.getAttribute("data-order-id");
                 const selectElement = document.getElementById(`status-${orderId}`);
                 const newStatus = selectElement.value;
-
                 updateOrderStatus(orderId, newStatus, token);
-            });
+                toggleEditButtons(orderId, false);
+                selectElement.style.border = "2px solid black";
+                selectElement.disabled = true;
+            }
         });
     }
 
