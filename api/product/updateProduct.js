@@ -38,7 +38,7 @@ validationAdm(token).then(id => {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
 
-        fetch('http://3.138.179.81:8081/produtos/' + productId + '/atualizar', {
+        fetch('http://3.15.223.242:8081/produtos/' + productId + '/atualizar', {
             method: "PUT",
             headers: { 
                 "Authorization": "Bearer " + token

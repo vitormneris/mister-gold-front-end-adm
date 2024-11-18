@@ -1,6 +1,6 @@
 export async function validationAdm(token) {
     try {
-        const response = await fetch('http://3.138.179.81:8081/autorizacao/token/administrador', {
+        const response = await fetch('http://3.15.223.242:8081/autorizacao/token/administrador', {
             method: "GET",
             headers: { 
                 "Authorization": "Bearer " + token

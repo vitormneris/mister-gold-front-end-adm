@@ -35,7 +35,7 @@ validationAdm(token).then(id => {
     
         product.append("file", image);
 
-        fetch('http://3.138.179.81:8081/produtos/salvar', {
+        fetch('http://3.15.223.242:8081/produtos/salvar', {
             method: "POST",
             headers: { 
                 "Authorization": "Bearer " + token
