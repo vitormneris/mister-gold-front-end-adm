@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
 
-fetch('http://3.15.223.242:8081/categorias/' + productId + '/id', {
+fetch('http://18.227.48.211:8081/categorias/' + productId + '/id', {
     headers: {
         "Content-Type": "application/json"
     },

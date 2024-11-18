@@ -1,4 +1,4 @@
-fetch('http://3.15.223.242:8081/categorias?page=0&pageSize=10&isActive=true', {
+fetch('http://18.227.48.211:8081/categorias?page=0&pageSize=10&isActive=true', {
     method: "GET"
   }).then(
     response => {
