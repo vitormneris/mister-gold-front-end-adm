@@ -21,7 +21,7 @@ validationAdm(token).then(id => {
     
         category.append("file", image);
 
-        fetch('http://localhost:8084/categorias/salvar', {
+        fetch('http://3.138.179.81:8081/categorias/salvar', {
             headers: { 
                 "Authorization": "Bearer " + token
             },

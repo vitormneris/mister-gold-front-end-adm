@@ -5,7 +5,7 @@ async function deleteMessage(data) {
     if (messageId != null) {
 
         if (window.confirm("Você deseja deletar esta mensagem?")) {
-            fetch('http://localhost:8084/mensagens/' + messageId + '/deletar', {
+            fetch('http://3.138.179.81:8081/mensagens/' + messageId + '/deletar', {
                 method: "DELETE",
                 headers: {
                     "Authorization": "Bearer " + token,

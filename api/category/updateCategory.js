@@ -23,7 +23,7 @@ validationAdm(token).then(id => {
         const urlParams = new URLSearchParams(window.location.search);
         const categoryId = urlParams.get('id');
 
-        fetch('http://localhost:8084/categorias/' + categoryId + '/atualizar', {
+        fetch('http://3.138.179.81:8081/categorias/' + categoryId + '/atualizar', {
             headers: { 
                 "Authorization": "Bearer " + token
             },

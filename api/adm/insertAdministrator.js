@@ -20,7 +20,7 @@ validationAdm(token).then(id => {
 
         if (password_first == password_second) {
     
-            fetch('http://localhost:8084/administradores/salvar', {
+            fetch('http://3.138.179.81:8081/administradores/salvar', {
                 headers: { 
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + token

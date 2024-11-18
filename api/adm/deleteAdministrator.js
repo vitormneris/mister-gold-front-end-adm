@@ -8,7 +8,7 @@ document.getElementById("buttonDelete").addEventListener("click", function() {
 
         if (window.confirm("Você deseja deletar esta conta de administrador?")) {
 
-            fetch('http://localhost:8084/administradores/' + id + '/deletar', {
+            fetch('http://3.138.179.81:8081/administradores/' + id + '/deletar', {
                 method: "DELETE",
                 headers: {
                     "Authorization": "Bearer " + token

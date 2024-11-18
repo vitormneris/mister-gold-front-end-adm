@@ -1,6 +1,6 @@
 export async function getCategoriesList(){
     try {
-        const response = await fetch('http://localhost:8084/categorias?page=0&pageSize=1000000&isActive=true', {
+        const response = await fetch('http://3.138.179.81:8081/categorias?page=0&pageSize=1000000&isActive=true', {
             method: "GET"
         });
 

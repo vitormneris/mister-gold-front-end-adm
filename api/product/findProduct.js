@@ -2,7 +2,7 @@ import { getCategoriesList } from "../category/CategoryOptions.js";
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
 
-fetch('http://localhost:8084/produtos/' + productId + '/id', {
+fetch('http://3.138.179.81:8081/produtos/' + productId + '/id', {
     headers: {
         "Content-Type": "application/json"
     },

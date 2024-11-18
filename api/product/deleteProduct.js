@@ -12,7 +12,7 @@ document.getElementById("buttonDelete").addEventListener("click", function(event
     
         if (window.confirm("Você deseja deletar este produto?")) {
 
-            fetch('http://localhost:8084/produtos/' + productId + '/deletar', {
+            fetch('http://3.138.179.81:8081/produtos/' + productId + '/deletar', {
                 method: "DELETE",
                 headers: {
                     "Authorization": "Bearer " + token
