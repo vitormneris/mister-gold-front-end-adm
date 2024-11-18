@@ -31,5 +31,8 @@ validationAdm(token).then(id => {
         const tdEmail = document.getElementById("email")
         tdEmail.value = data.email
         tdEmail.focus()
+
+        const buttonDelete = document.getElementById("buttonDelete")
+        buttonDelete.value = data.id
     }
 })

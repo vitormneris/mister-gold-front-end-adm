@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         <h2 class="adm-pages">Administração</h2>
         <hr class="hr" />
          <ul>
-            <li><a href="/html/adm/new_adm.html">Criar administrador</a></li>
             <li><a href="/html/adm/profile_adm.html">Perfil administrador</a></li>
             <li><a href="/html/messages.html">Mensagens</a></li>
         </ul>

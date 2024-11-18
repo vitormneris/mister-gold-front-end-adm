@@ -85,13 +85,12 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.1); 
 }
 
-/* Estilos de Botão da Sidebar */
 .btn-sidebar {
     margin: auto; 
     border-radius: 12px; 
     border: 1px solid var(--bgColor2); 
 }
-/* estilo da sidebar */
+
 .sidebar-container{
     margin-top: 10vh;
 }
@@ -103,7 +102,7 @@ button:hover {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     height: 100%;
-    left: -17.5rem; /* Esconder a sidebar inicialmente */
+    left: -17.5rem;
     transition: left 0.3s ease; 
     top: 0;
     z-index: 10;
@@ -145,7 +144,7 @@ button:hover {
 .sidebar ul li a:hover {
     color: var(--hlColor1);
 }
-/* Estilos para a barra de rolagem */
+
 *::-webkit-scrollbar {
     width: 8px; 
 }
@@ -167,7 +166,7 @@ button:hover {
 .bg-image{
     z-index: 9;
 }
-/* estilo dos card de produtos */
+
 .card{
     background-color: var(--bgColor2);
 }

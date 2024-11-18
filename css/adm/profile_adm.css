@@ -17,7 +17,7 @@
 
 .btn_delete {
     background-color: rgb(207, 10, 10) !important;
-    margin: 0px 25px;
+    margin: 0px 25px; 
 }
 
 .form-container h2 {
@@ -57,7 +57,7 @@
 }
 .btnNew{
     display: flex; 
-    justify-content: start;
+    justify-content: space-between;
     margin: 10px;
 }
 .btnNew a{

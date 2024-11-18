@@ -47,6 +47,7 @@ function showData(product) {
 
     let listCategories = getCategoriesList();
     const selectedCategories = []
+
     listCategories.then(categories => {
         categories.forEach(category => {
             product.categories.forEach(productCategory => {
@@ -56,14 +57,11 @@ function showData(product) {
             })
         })
     })
+
     listCategories.then(categories => {
         categories.forEach(category => {
-           
             const isSelected = selectedCategories.includes(category.id) ? 'selected' : '';
-
-            // Cria o elemento option e marca como selecionado se for necessário
             const optionElement = `<option value="${category.id}" ${isSelected}>${category.nome}</option>`;
-
             divContainer.innerHTML += optionElement;
         })
 
@@ -81,6 +79,4 @@ function showData(product) {
             }
         })
     }).catch(error => console.log(error))
-
-
 }

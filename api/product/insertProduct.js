@@ -43,21 +43,31 @@ validationAdm(token).then(id => {
             body: product
         })
         .then(response => {
-            if (response.status === 201) {
-                return response.json()
-            }
-            return null
+            return [ response.json(), response.status ]
         })
-        .then(data => {
-            if (data) {
-                showData("Cadastrado com sucesso!", "green")
+        .then(data => {        
+    
+            if (data[1] == 201) {
+                showData("Produto criado com sucesso!", "green")
+            } if (data[1] == 403) {
+                showData("Não autorizado", "red")
             } else {
-                showData("Problema ao cadastrar!", "red")
+                data[0].then(error => {
+                    console.log(error)
+                    let name_fields = []
+                    error.fields.forEach(field => {
+                        name_fields.push(" " + field.description)
+                    });
+    
+                    showData(error.message +  name_fields + ".", "red")
+    
+                })
             }
         })
         .catch(error => {
             console.log(error)
         })
+    
 
         function showData(text, cl) {
             const divStatus = document.getElementById("status")
@@ -65,6 +75,7 @@ validationAdm(token).then(id => {
             if (divStatus.querySelector("p")) divStatus.querySelector("p").remove()
 
             const parag = document.createElement("p")
+            parag.style.margin = "10px"
             parag.textContent = text
             parag.style.color = cl
             parag.style.textAlign = "center"

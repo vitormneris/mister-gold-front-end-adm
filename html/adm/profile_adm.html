@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/css/adm/adm_UserTable.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/adm/profile_adm.css">
+  <script type="module" src="/api/adm/deleteAdministrator.js"></script>
 
   <title>Perfil de administração</title>
 </head>
@@ -42,7 +43,7 @@
               <button data-mdb-ripple-init type="button" class="btn btn-warning btn-block mb-4"
                 id="btnEdit">Editar</button>
 
-              <div class="row mb-4" id="btn-group" style="display: none;">
+              <div class="row" id="btn-group" style="display: none;">
 
                 <div class="col">
                   <button data-mdb-ripple-init onclick="toggleEditButtons()" type="button"
@@ -66,6 +67,7 @@
       </div>
       <div class="btnNew">
         <a class="btn btn-primary" href="/html/adm/new_adm.html">Criar novo administrador</a>
+        <button class="btn btn-danger" id="buttonDelete" >Apagar conta</button>
        </div>
     </div>
     </div>

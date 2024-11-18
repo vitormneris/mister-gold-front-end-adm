@@ -1,6 +1,6 @@
 export async function getCategoriesList(){
     try {
-        const response = await fetch('http://localhost:8084/categorias?page=0&pageSize=10&isActive=true', {
+        const response = await fetch('http://localhost:8084/categorias?page=0&pageSize=1000000&isActive=true', {
             method: "GET"
         });
 
