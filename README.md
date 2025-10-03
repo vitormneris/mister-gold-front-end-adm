@@ -1,21 +1,33 @@
-## Projeto Mister Gold front-end Administrador
+# Mister Gold – Front-end do Administrador
 
-&nbsp;
-Projeto da faculdade FATEC Itaquera, ministrado pela professora Viviane de Oliveira. É um projeto de e-commerce simples com as entidades categoria, produto, pedido, cliente e administrador em relacionamento, mas este repositório não é o projeto completo, aqui está o front-end voltado para o administrador. Nesta front-end foi usado HTML5, CSS3, Javascript.
+Este é o **front-end voltado para o administrador** do projeto de e-commerce **Mister Gold**, desenvolvido para a disciplina da FATEC Itaquera sob orientação da professora **Viviane de Oliveira**.  
 
-&nbsp;
-Abaixo está o link dos repositórios que compôem esse projeto:
+O projeto é um e-commerce simples, com entidades como **Categoria**, **Produto**, **Pedido**, **Cliente** e **Administrador** em relacionamento. Este repositório contém apenas o front-end do administrador; o back-end e o front-end do cliente estão em repositórios separados.  
 
-### back-end 
-&nbsp;
-https://github.com/vitormneris/mister-gold-java-spring-hexagonal
+A interface foi desenvolvida utilizando:  
 
-### front-end para o cliente
-&nbsp;
-https://github.com/vitormneris/mister-gold-front-mdbootstrap-javascript
+- **HTML5**  
+- **CSS3**  
+- **JavaScript**  
+- **MDB UI Kit**  
 
-### Instalação 
-1. Baixar e instalar o Node.js.
-2. Abrir o terminal e navegar até a pasta raiz do projeto.
-3. Instalar o MDB UI Kit com o seguinte comando: 
+---
+
+## Repositórios complementares
+
+### Back-end
+[https://github.com/vitormneris/mister-gold-api-spring-boot](https://github.com/vitormneris/mister-gold-api-spring-boot)
+
+### Front-end do cliente
+[https://github.com/vitormneris/mister-gold-front-end-customer](https://github.com/vitormneris/mister-gold-front-end-customer)
+
+---
+
+## Instalação
+
+1. Baixar e instalar o **Node.js**.  
+2. Abrir o terminal e navegar até a pasta raiz do projeto.  
+3. Instalar o **MDB UI Kit** com o comando:  
+
+```bash
 npm install
