@@ -1,6 +1,6 @@
 export async function getCategoriesList(){
     try {
-        const response = await fetch('http://18.227.48.211:8081/categorias?page=0&pageSize=1000000&isActive=true', {
+        const response = await fetch('http://localhost:8081/categorias?page=0&pageSize=300&isActive=true', {
             method: "GET"
         });
 
@@ -9,7 +9,7 @@ export async function getCategoriesList(){
             const data = await response.json();
             const categoriesList = []
             data.content.forEach(category=>{
-                categoriesList.push({"id":category.id,"nome":category.name})
+                categoriesList.push({"id": category.id,"nome": category.name})
                 console.log(categoriesList)
             })
             return categoriesList;

@@ -12,7 +12,7 @@ document.getElementById("buttonDelete").addEventListener("click", function(event
     
         if (window.confirm("Você deseja deletar esta categoria?")) {
 
-            fetch('http://18.227.48.211:8081/categorias/' + categoryId + '/deletar', {
+            fetch('http://localhost:8081/categorias/' + categoryId + '/deletar', {
                 method: "DELETE",
                 headers: {
                     "Authorization": "Bearer " + token

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const token = localStorage.getItem("token")
 
     validationAdm(token).then(id => {
-        fetch(`http://18.227.48.211:8081/mensagens`, {
+        fetch(`http://localhost:8081/mensagens`, {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": "Bearer " + token

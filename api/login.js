@@ -9,7 +9,7 @@ document.getElementById("button").addEventListener("click", function(event) {
         "password": password
     }
 
-    fetch('http://18.227.48.211:8081/autorizacao/login', {
+    fetch('http://localhost:8081/autorizacao/login', {
         method: "POST",
         headers: { 
             "Content-Type": "application/json"

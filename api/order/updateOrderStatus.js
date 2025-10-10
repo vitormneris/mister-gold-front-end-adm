@@ -18,7 +18,7 @@ export function updateOrderStatus(orderId, newStatus, token) {
     }
     validationAdm(token)
         .then(id => {
-            fetch("http://18.227.48.211:8081/pedidos/" + orderId + "/atualizar", {
+            fetch("http://localhost:8081/pedidos/" + orderId + "/atualizar", {
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + token

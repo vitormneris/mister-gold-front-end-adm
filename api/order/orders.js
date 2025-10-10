@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function fetchData() {
         validationAdm(token)
             .then(id => {
-                fetch(`http://18.227.48.211:8081/pedidos?page=${currentPage}&pageSize=${pageSize}&isActive=true`, {
+                fetch(`http://localhost:8081/pedidos?page=${currentPage}&pageSize=${pageSize}&isActive=true`, {
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": "Bearer " + token

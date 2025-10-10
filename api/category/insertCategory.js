@@ -21,7 +21,7 @@ validationAdm(token).then(id => {
     
         category.append("file", image);
 
-        fetch('http://18.227.48.211:8081/categorias/salvar', {
+        fetch('http://localhost:8081/categorias/salvar', {
             headers: { 
                 "Authorization": "Bearer " + token
             },
@@ -34,7 +34,7 @@ validationAdm(token).then(id => {
         .then(data => {        
     
             if (data[1] == 201) {
-                showData("Mensagem enviada com sucesso!", "green")
+                showData("Categoria criada com sucesso!", "green")
             } if (data[1] == 403) {
                 showData("Não autorizado", "red")
             } else {

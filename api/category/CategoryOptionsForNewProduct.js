@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    fetch('http://18.227.48.211:8081/categorias?page=0&pageSize=1000000&isActive=true', {
+    fetch('http://localhost:8081/categorias?page=0&pageSize=30&isActive=true', {
         method: "GET"
     }).then(response => {
         if (response.status === 200) {

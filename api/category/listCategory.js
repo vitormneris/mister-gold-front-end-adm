@@ -10,7 +10,7 @@ validationAdm(token).then(id => {
     document.querySelector(".pagination").addEventListener("click", handlePaginationClick);
 
     function fetchData() {
-        fetch(`http://18.227.48.211:8081/categorias?page=${currentPage}&pageSize=${pageSize}&isActive=true`, {
+        fetch(`http://localhost:8081/categorias?page=${currentPage}&pageSize=${pageSize}&isActive=true`, {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": "Bearer " + token
